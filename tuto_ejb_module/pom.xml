@@ -1,0 +1,54 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<artifactId>tuto_ejb_module</artifactId>
+	<groupId>com.dppware.tuto</groupId>
+	<version>0.1.0</version>
+
+	<name>tuto_ejb_module</name>
+	<description>Módulo que contiene las interfaces e implementacion del Enterprise Java Bean</description>
+
+	<packaging>ejb</packaging> 
+
+
+	<properties>
+		<ejb-api.version>3.0</ejb-api.version>
+	</properties>
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-ejb-plugin</artifactId>
+				<configuration>
+					<ejbVersion>3.1</ejbVersion>
+					<generateClient>true</generateClient>
+					<archive>
+						<manifest>
+							<addClasspath>true</addClasspath>
+						</manifest>
+					</archive>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+
+
+	<dependencies>
+		<dependency>
+			<groupId>com.ibm.websphere</groupId>
+			<artifactId>j2ee</artifactId>
+			<version>7.0</version>
+		</dependency>
+		<dependency>
+			<groupId>com.ibm.websphere</groupId>
+			<artifactId>apis</artifactId>
+			<version>1.4</version>
+		</dependency>
+		<dependency>
+			<groupId>javax.ejb</groupId>
+			<artifactId>ejb-api</artifactId>
+			<version>${ejb-api.version}</version>
+		</dependency>
+	</dependencies>
+
+</project>

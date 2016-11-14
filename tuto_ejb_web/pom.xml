@@ -1,0 +1,50 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<artifactId>tuto_ejb_web</artifactId>
+	<groupId>com.dppware.tuto</groupId>
+	<version>0.1.0</version>
+	
+	<name>tuto_ejb_web</name>
+	<description>Modulo web  para probar el acceso local al EJB(tuto_ejb_module) dentro del mismo EAR</description>
+
+	<packaging>war</packaging> 
+
+
+	
+	<build>
+		<plugins>
+			<plugin>
+				<artifactId>maven-war-plugin</artifactId>
+				<configuration>
+					<archive>
+						<manifest>
+							<addClasspath>true</addClasspath>
+							<classpathPrefix>lib/</classpathPrefix>
+						</manifest>
+					</archive>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+
+	<dependencies>
+		<dependency>
+			<groupId>com.ibm.websphere</groupId>
+			<artifactId>j2ee</artifactId>
+			<version>7.0</version>
+		</dependency>
+		<dependency>
+		    <groupId>javax.servlet</groupId>
+		    <artifactId>javax.servlet-api</artifactId>
+		    <version>3.0.1</version>
+		    <scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>com.dppware.tuto.ejb</groupId>
+			<artifactId>tuto_ejb_module</artifactId>
+			<version>0.1.0</version>
+		</dependency>
+	</dependencies>
+	
+</project>

@@ -1,0 +1,66 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<artifactId>tuto_ejb_ear</artifactId>
+	<groupId>com.dppware.tuto</groupId>
+	<version>0.1.0</version>
+
+	<name>tuto_ejb_ear</name>
+	<description>Empaquetado de los modulos WEB y EJB</description>
+
+	<packaging>ear</packaging> 
+
+	<build>
+		<plugins>
+			<plugin>	
+	   			<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-ear-plugin</artifactId>
+				<configuration>
+					<archive>
+						<addMavenDescriptor>false</addMavenDescriptor>
+                    </archive>					
+					<defaultLibBundleDir>/lib</defaultLibBundleDir>
+					<modules>												
+						<webModule>
+							<groupId>com.dppware.tuto</groupId>
+							<artifactId>tuto_ejb_web</artifactId>
+						</webModule>
+						<ejbModule>
+							<groupId>com.dppware.tuto</groupId>
+							<artifactId>tuto_ejb_module</artifactId>
+						</ejbModule>
+					</modules>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+
+
+	<dependencies>
+		<dependency>
+			<groupId>com.ibm.websphere</groupId>
+			<artifactId>j2ee</artifactId>
+			<version>7.0</version>
+		</dependency>
+		<dependency>
+			<groupId>com.dppware.tuto</groupId>
+			<artifactId>tuto_ejb_web</artifactId>
+			<version>0.1.0</version>
+			<!-- MUST HAVE THIS SCOPE DEFINITION  to run ear-plugin -->
+			<scope>runtime</scope>
+			<type>war</type>
+			<!-- MUST HAVE THIS SCOPE DEFINITION  to run ear-plugin -->
+		</dependency>
+		<dependency>
+			<groupId>com.dppware.tuto</groupId>
+			<artifactId>tuto_ejb_module</artifactId>
+			<version>0.1.0</version>
+			<!-- MUST HAVE THIS SCOPE DEFINITION  to run ear-plugin -->
+			<scope>runtime</scope>
+			<type>ejb</type>
+			<!-- MUST HAVE THIS SCOPE DEFINITION  to run ear-plugin -->
+		</dependency>
+		
+	</dependencies>
+	
+</project>

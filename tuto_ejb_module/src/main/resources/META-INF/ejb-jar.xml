@@ -1,0 +1,15 @@
+<ejb-jar version="3.0" xmlns="http://java.sun.com/xml/ns/javaee" 
+ 		  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+ 		  metadata-complete="false"  
+ 		  xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/ejb-jar_3_0.xsd" >
+	<enterprise-beans>
+		<session>
+ 			<ejb-name>TutoEJBImpl</ejb-name>
+ 			<business-local>com.dppware.tutoejbmodule.interfaces.ITutoEJBLocal</business-local>
+ 			<business-remote>com.dppware.tutoejbmodule.interfaces.ITutoEJBRemote</business-remote>
+ 			<ejb-class>com.dppware.tutoejbmodule.impl.TutoEJBImpl</ejb-class>
+ 			<session-type>Stateless</session-type>
+ 		</session>
+ 	</enterprise-beans>
+	<assembly-descriptor/>
+</ejb-jar>

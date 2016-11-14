@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<application xmlns="http://java.sun.com/xml/ns/javaee"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="5"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/application_5.xsd">
+
+	<display-name>tuto_ejb_ear</display-name>
+	<module>
+		<ejb>tuto_ejb_module-0.1.0.jar</ejb>
+	</module>
+	<module>
+		<web>
+		      <web-uri>tuto_ejb_web-0.1.0.war</web-uri>
+		      <context-root>/tuto_ejb_web</context-root>
+	    </web>
+	</module>
+</application>
