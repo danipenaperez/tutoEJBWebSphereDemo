@@ -67,6 +67,7 @@ El EJB debe exponer 2 interfaces (local y remota) asi que vamos a crear el codig
 La interfaz de acceso local
 
 ![alt tag](https://cloud.githubusercontent.com/assets/12812794/20296861/7b6c2034-ab0d-11e6-964a-6f4b3ee5b33a.png)
+
 La interfaz de acceso remoto
 
 ![alt tag](https://cloud.githubusercontent.com/assets/12812794/20296883/a3ac23c8-ab0d-11e6-8ac0-144508517d7d.png)
@@ -85,9 +86,10 @@ Para ello necesitamos 3 archivos que debemos tener en la carpeta /resources/META
  ibm-ejb-jar-bnd.xml -> Configuracion del EJB para websphere. Este archivo si no lo creamos, lo creara websphere automaticamente, pero usando valores "predeterminados".
  ibm-ejb-jar-ext.xml -> Configuracion del EJB para websphere. Este archivo si no lo creamos, lo creara websphere automaticamente, pero usando valores "predeterminados".
 
-EJB-JAR.XML
-Define el EJB, las interfaces y el tipo de EJB que es ( usando estos descriptores no harian falta las anotaciones en las clases java, pero pongo toda la configuracion para que eligas la que se adapta mejor a tus necesidades):
-![alt tag](https://cloud.githubusercontent.com/assets/12812794/20269680/8a920ac6-aa84-11e6-9c32-58bab6630e5e.png)
+	EJB-JAR.XML
+	Define el EJB, las interfaces y el tipo de EJB que es ( usando estos descriptores no harian falta las anotaciones en las clases java, pero pongo toda la configuracion para que eligas la que se adapta mejor a tus necesidades):
+
+![alt tag](https://cloud.githubusercontent.com/assets/12812794/20296925/ec3e8b8a-ab0d-11e6-876a-16ee4cd5d14d.png)
 
 	IBM-EJB-JAR-BND.XML
 Contiene informacion del despliegue del EJB , de este archivo lo mas importante es el simple-binding-name que el nombre que tendra el EJB dentro del JNDI. 
