@@ -1,0 +1,20 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<artifactId>tuto_ejb_parent</artifactId>
+	<groupId>com.dppware.tuto</groupId>
+	<version>0.1.0</version>
+	
+	<name>tuto_ejb_parent</name>
+	<description>Modulo parent para compilacion de todos los modulos</description>
+
+	<packaging>pom</packaging> 
+
+	<modules>
+		<module>./tuto_ejb_module</module>
+		<module>./tuto_ejb_web</module>
+		<module>./tuto_ejb_ear</module>
+	</modules>
+
+	
+</project>
