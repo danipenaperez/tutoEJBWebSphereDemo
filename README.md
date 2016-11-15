@@ -85,19 +85,19 @@ EJB-JAR.XML
 Define el EJB, las interfaces y el tipo de EJB que es ( usando estos descriptores no harian falta las anotaciones en las clases java, pero pongo toda la configuracion para que eligas la que se adapta mejor a tus necesidades):
 ![alt tag](https://cloud.githubusercontent.com/assets/12812794/20269680/8a920ac6-aa84-11e6-9c32-58bab6630e5e.png)
 
-IBM-EJB-JAR-BND.XML
+	IBM-EJB-JAR-BND.XML
 Contiene informacion del despliegue del EJB , de este archivo lo mas importante es el simple-binding-name que el nombre que tendra el EJB dentro del JNDI. 
 ![alt tag](https://cloud.githubusercontent.com/assets/12812794/20269717/b284bf06-aa84-11e6-8c79-a5fe87e71569.png)
 
-IBM_EJB_JAR-EXT.XML
+	IBM_EJB_JAR-EXT.XML
 Contiene informacion adicional sobre los parametros de configuracion del EJB. 
 ![alt tag](https://cloud.githubusercontent.com/assets/12812794/20269721/b6627ad2-aa84-11e6-8845-fa445c6dcfa6.png)
 
-Una imagen de como queda el proyecto ahora es esta:
+	Una imagen de como queda el proyecto ahora es esta:
 ![alt tag](https://cloud.githubusercontent.com/assets/12812794/20269745/ceab127a-aa84-11e6-9e5e-7c281379b7c3.png)
 
-Ahora vamos a crear un modulo WEB muy sencillo que expondra un endpoint HTTP y que al invocarlo , este llamara al EJB que hemos definido.
-Creamos un modulo maven con estas dependencias y caracteristicas:
+	Ahora vamos a crear un modulo WEB muy sencillo que expondra un endpoint HTTP y que al invocarlo , este llamara al EJB que hemos definido.
+	Creamos un modulo maven con estas dependencias y caracteristicas:
 ```xml
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
@@ -151,21 +151,21 @@ Se puede notar, que tenemos como dependencia el modulo EJB, ya que necesitamos c
 Si nos fijamos en la definicion del  plugin maven-ejb-plugin vemos que tiene generate-client a true, esto quiere decir que generara el 2 archivos jar, el modulo ejb completo y el modulo solo con las interfaces (lo puedes comprobar en la carpeta target al compilar el proyecto). En este caso no me voy a complicar y voy a usar la libreria completa como dependencia del modulo web.
 Como todos los modulos, web vamos a definir un servlet muy sencillo y lo añadimos en el web.xml y vemos su clase java:
 
-El servlet
+	El servlet
 ![alt tag](https://cloud.githubusercontent.com/assets/12812794/20271275/95122566-aa8a-11e6-97e9-b1bad90d0564.png)
 Vemos como invoca al EJB sacandolo del contexto, usando la referencia al JNDI que especificamos anteriormente en el descriptor del EJB.
 
-El web xml no tiene nada especial
+	El web xml no tiene nada especial
 ![alt tag](https://cloud.githubusercontent.com/assets/12812794/20271322/b49628ec-aa8a-11e6-8600-61ec1915cd59.png)
 
-La pagina de inicio con el link a la ejecucion del servlet
+	La pagina de inicio con el link a la ejecucion del servlet
 ![alt tag](https://cloud.githubusercontent.com/assets/12812794/20271347/cf3e2168-aa8a-11e6-924d-4964c8c922c2.png)
 
-Tu proyecto web deberia tener esta estructura:
+	Tu proyecto web deberia tener esta estructura:
 ![alt tag](https://cloud.githubusercontent.com/assets/12812794/20271364/de5a73ea-aa8a-11e6-8fc3-1516aa1d1682.png)
 
-Bueno, pues ahora solo falta empaquetar los 2 modulos (el EJB y el WEB) dentro de un modulo de aplicacion J2EE EAR.
-Para ello creamos otro modulo maven usando este pom:
+	Bueno, pues ahora solo falta empaquetar los 2 modulos (el EJB y el WEB) dentro de un modulo de aplicacion J2EE EAR.
+	Para ello creamos otro modulo maven usando este pom:
 ```xml
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
@@ -238,6 +238,7 @@ Quedara asi: definiendo los 2 modulos que contiene el EAR:
 ![alt tag](https://cloud.githubusercontent.com/assets/12812794/20271650/c126e564-aa8b-11e6-8a3f-fc5ffb5225ff.png)
 
 Tu proyecto EAR tiene que tener esta estructura:
+
 ![alt tag](https://cloud.githubusercontent.com/assets/12812794/20271670/d5389962-aa8b-11e6-8356-14d4ab299636.png)
 
 
@@ -252,15 +253,15 @@ ahora dentro de la carpeta /target del modulo ear tendremos el EAR generado. (si
 
 DESPLIEGUE EN WEBSPHERE
 ------
-1.Nos logamos en websphere y abrimos opcion de menu:
-Applications... Applications Type ... Websphere enterprise applications:
+	1.Nos logamos en websphere y abrimos opcion de menu:
+	Applications... Applications Type ... Websphere enterprise applications:
 ![alt tag](https://cloud.githubusercontent.com/assets/12812794/20272311/ca13558e-aa8d-11e6-8525-92197a8ba11a.png)
 
-2.NextElegimos fastPath, y no nos complicamos con la configuración, ya que mucha se la estamos pasando en los ficheros de configuración
+	2.NextElegimos fastPath, y no nos complicamos con la configuración, ya que mucha se la estamos pasando en los ficheros de configuración
 
 ![alt tag](https://cloud.githubusercontent.com/assets/12812794/20272314/ca15a37a-aa8d-11e6-9b08-30a97be81a5c.png)
 
-3.Parametros por defecto
+	3.Parametros por defecto
 
 ![alt tag](https://cloud.githubusercontent.com/assets/12812794/20272310/ca10f154-aa8d-11e6-8b7d-f2b87d2b962a.png)
 
