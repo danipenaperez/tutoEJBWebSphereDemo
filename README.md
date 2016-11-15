@@ -65,11 +65,15 @@ Aqui encontramos las dependencias de websphere-apis y la del estandar ejb-api.
 El EJB debe exponer 2 interfaces (local y remota) asi que vamos a crear el codigo de las 2 interfaces en el paquete com.dppware.tutoejbmodule.interfaces y dentro vamos a crear las 2 interfaces , una local y otra remota, cada una exponiendo un metodo para testear la invocacion al EJB:
 
 La interfaz de acceso local
-![alt tag](https://cloud.githubusercontent.com/assets/12812794/20269614/399ad418-aa84-11e6-84e9-b3556f028b57.png)
+
+![alt tag](https://cloud.githubusercontent.com/assets/12812794/20296861/7b6c2034-ab0d-11e6-964a-6f4b3ee5b33a.png)
 La interfaz de acceso remoto
-![alt tag](https://cloud.githubusercontent.com/assets/12812794/20269636/52f32a46-aa84-11e6-80d9-9c1e91c470f7.png)
+
+![alt tag](https://cloud.githubusercontent.com/assets/12812794/20296883/a3ac23c8-ab0d-11e6-8ac0-144508517d7d.png)
+
 Y ahora el corazon del EJB, la implementacion de las 2 interfaces
-![alt tag](https://cloud.githubusercontent.com/assets/12812794/20269874/4709c93c-aa85-11e6-90cc-7d7f9d6f2ec8.png)
+
+![alt tag](https://cloud.githubusercontent.com/assets/12812794/20296904/c78ab52a-ab0d-11e6-92d9-050237ab27c3.png)
 
 Como vemos es muy sencillo.
 
@@ -87,11 +91,11 @@ Define el EJB, las interfaces y el tipo de EJB que es ( usando estos descriptore
 
 	IBM-EJB-JAR-BND.XML
 Contiene informacion del despliegue del EJB , de este archivo lo mas importante es el simple-binding-name que el nombre que tendra el EJB dentro del JNDI. 
-![alt tag](https://cloud.githubusercontent.com/assets/12812794/20269717/b284bf06-aa84-11e6-8c79-a5fe87e71569.png)
+![alt tag](https://cloud.githubusercontent.com/assets/12812794/20296978/4b7aeabc-ab0e-11e6-916a-0ee7d07ba1ed.png)
 
 	IBM_EJB_JAR-EXT.XML
 Contiene informacion adicional sobre los parametros de configuracion del EJB. 
-![alt tag](https://cloud.githubusercontent.com/assets/12812794/20269721/b6627ad2-aa84-11e6-8845-fa445c6dcfa6.png)
+![alt tag](https://cloud.githubusercontent.com/assets/12812794/20297014/775e8aa8-ab0e-11e6-82fe-bef24997ab73.png)
 
 	Una imagen de como queda el proyecto ahora es esta:
 ![alt tag](https://cloud.githubusercontent.com/assets/12812794/20269745/ceab127a-aa84-11e6-9e5e-7c281379b7c3.png)
