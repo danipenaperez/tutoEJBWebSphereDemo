@@ -254,6 +254,38 @@ DESPLIEGUE EN WEBSPHERE
 ------
 1.Nos logamos en websphere y abrimos opcion de menu:
 Applications>Applications Type>Websphere enterprise applications:
+![alt tag](https://cloud.githubusercontent.com/assets/12812794/20272311/ca13558e-aa8d-11e6-8525-92197a8ba11a.png)
+
+2.NextElegimos fastPath, y no nos complicamos con la configuración, ya que mucha se la estamos pasando en los ficheros de configuración
+![alt tag](https://cloud.githubusercontent.com/assets/12812794/20272314/ca15a37a-aa8d-11e6-9b08-30a97be81a5c.png)
+
+3.Parametros por defecto
+![alt tag](https://cloud.githubusercontent.com/assets/12812794/20272310/ca10f154-aa8d-11e6-8b7d-f2b87d2b962a.png)
+Seguimos
+![alt tag](https://cloud.githubusercontent.com/assets/12812794/20272309/ca10d840-aa8d-11e6-9067-c02d12830a37.png)
+Seguimos
+![alt tag](https://cloud.githubusercontent.com/assets/12812794/20272312/ca1415f0-aa8d-11e6-9599-a4b4d33879c6.png)
+Seguimos
+![alt tag](https://cloud.githubusercontent.com/assets/12812794/20272313/ca159eca-aa8d-11e6-975e-bbbf85af3f73.png)
+Seguimos
+![alt tag](https://cloud.githubusercontent.com/assets/12812794/20272318/ca33cc1a-aa8d-11e6-826f-e99993018a5d.png)
+Seguimos los pasos y finalizamos
+![alt tag](https://cloud.githubusercontent.com/assets/12812794/20272317/ca304dc4-aa8d-11e6-94a5-9276e9eb2765.png)
+Pulsamos save.
+Ahora falta seleccionarlo en la lista y pulsar en Start:
+![alt tag](https://cloud.githubusercontent.com/assets/12812794/20272316/ca25bbde-aa8d-11e6-858e-bdf2e764ef29.png)
+Ahora vamos a la URL de nuestra app web (http://localhost:9080/tuto_ejb_web/):
+![alt tag](https://cloud.githubusercontent.com/assets/12812794/20272319/ca38bdf6-aa8d-11e6-9fd2-9241b9348f07.png)
+y al hacer click en el link veremos que la respuesta ha pasado por le EJB:
+![alt tag](https://cloud.githubusercontent.com/assets/12812794/20272320/ca39f5d6-aa8d-11e6-80a0-dfc0a8d62544.png)
+
+
+
+
+
+
+4.
+
 
 
 
