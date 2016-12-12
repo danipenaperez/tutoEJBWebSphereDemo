@@ -3,6 +3,7 @@ package com.dppware.tutoejbweb.servlet;
 import java.io.IOException;
 import java.io.PrintWriter;
 
+import javax.naming.Context;
 import javax.naming.InitialContext;
 import javax.naming.NamingException;
 import javax.servlet.ServletException;
@@ -22,6 +23,9 @@ public class TestEjbServlet extends HttpServlet {
 		try {
 			String result =  this.invokeEJB("soy el servlet");
 			out.println(result); //Do output!!
+			
+			out.println("valor de URL resource-ref" + getURLValue());
+			
 		} catch (NamingException e) {
 			e.printStackTrace();
 			out.println(e);
@@ -40,6 +44,18 @@ public class TestEjbServlet extends HttpServlet {
 		InitialContext ctx = new InitialContext();
 		ITutoEJBRemote ejb  = (ITutoEJBRemote)ctx.lookup("ejb/TutoEJBImpl");
 		return ejb.testMethod(args);
+	}
+	
+	/**
+	 * 
+	 */
+	private java.net.URL getURLValue()throws NamingException{
+		// Obtain our environment naming context
+		Context initCtx = new InitialContext();
+		Context envCtx = (Context) initCtx.lookup("java:comp/env");
+
+		java.net.URL url = (java.net.URL)envCtx.lookup("url/daniURL");
+		return url;
 	}
 	
 }

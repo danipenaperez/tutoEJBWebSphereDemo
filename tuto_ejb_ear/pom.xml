@@ -9,7 +9,10 @@
 	<description>Empaquetado de los modulos WEB y EJB</description>
 
 	<packaging>ear</packaging> 
-
+	<properties>
+	    <maven.compiler.source>1.6</maven.compiler.source>
+	    <maven.compiler.target>1.6</maven.compiler.target>
+	  </properties>
 	<build>
 		<plugins>
 			<plugin>	
@@ -26,8 +29,8 @@
 							<artifactId>tuto_ejb_web</artifactId>
 						</webModule>
 						<ejbModule>
-							<groupId>com.dppware.tuto</groupId>
 							<artifactId>tuto_ejb_module</artifactId>
+							<groupId>com.dppware.tuto</groupId>
 						</ejbModule>
 					</modules>
 				</configuration>
@@ -52,8 +55,8 @@
 			<!-- MUST HAVE THIS SCOPE DEFINITION  to run ear-plugin -->
 		</dependency>
 		<dependency>
-			<groupId>com.dppware.tuto</groupId>
 			<artifactId>tuto_ejb_module</artifactId>
+			<groupId>com.dppware.tuto</groupId>
 			<version>0.1.0</version>
 			<!-- MUST HAVE THIS SCOPE DEFINITION  to run ear-plugin -->
 			<scope>runtime</scope>

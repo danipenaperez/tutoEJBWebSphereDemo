@@ -10,7 +10,10 @@
 
 	<packaging>war</packaging> 
 
-
+	<properties>
+	    <maven.compiler.source>1.6</maven.compiler.source>
+	    <maven.compiler.target>1.6</maven.compiler.target>
+	  </properties>
 	
 	<build>
 		<plugins>
@@ -41,8 +44,8 @@
 		    <scope>provided</scope>
 		</dependency>
 		<dependency>
-			<groupId>com.dppware.tuto.ejb</groupId>
 			<artifactId>tuto_ejb_module</artifactId>
+			<groupId>com.dppware.tuto</groupId>
 			<version>0.1.0</version>
 		</dependency>
 	</dependencies>
